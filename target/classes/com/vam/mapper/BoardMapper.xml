@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vam.mapper.BoardMapper">
+
+	<insert id="enroll">
+		insert into vam_board(title,content,writer)values (#{title},#{content},#{writer})
+	</insert>
+	
+	<select id="getList" resultType="com.vam.model.BoardVO">
+		select * from vam_board order by bno asc
+	</select>
+	
+	<select id="getPage" resultType="com.vam.model.BoardVO">
+		select * from vam_board where bno = #{bno}
+	</select>
+	
+	
+
+</mapper>
